@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakesh Babu - Income Tax Advocate</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // JavaScript for smooth scroll functionality
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</head>
+<body>
+  <!-- Header with sticky navigation -->
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('home')">Home</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Services</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('testimonials')">Testimonials</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Background Image -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Your Trusted Income Tax Advocate</h1>
+      <p>Expert Legal Services in Tax Filing, Planning & Advisory</p>
+      <a href="javascript:void(0)" onclick="scrollToSection('contact')" class="cta-button">Consult Now</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <h2>About Rakesh Babu</h2>
+      <p>
+        With over 15 years of experience in the field, Rakesh Babu is a highly trusted Income Tax Advocate specializing in individual and corporate tax services. He has built a reputation for providing clear, strategic tax advice and legal support to help clients manage and reduce tax liabilities.
+      </p>
+      <p>
+        Whether you're seeking advice on tax planning, filing returns, or resolving disputes with tax authorities, Rakesh’s legal expertise and proactive approach ensure you receive the best possible solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section-padding bg-light">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-card">
+          <h3>Income Tax Consultation</h3>
+          <p>Receive personalized consultations to optimize tax liabilities and ensure compliance with tax laws.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tax Filing & Return Services</h3>
+          <p>Ensure accurate and timely filing of your tax returns, avoiding penalties and complications.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tax Planning & Advisory</h3>
+          <p>Strategic tax planning to minimize liabilities, utilizing exemptions, deductions, and credits.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tax Representation & Dispute Resolution</h3>
+          <p>Representation during audits and resolving disputes with tax authorities to secure favorable outcomes.</p>
+        </div>
+        <div class="service-card">
+          <h3>Corporate Tax Services</h3>
+          <p>Expert advice on corporate taxation, mergers, acquisitions, and structuring businesses for tax efficiency.</p>
+        </div>
+        <div class="service-card">
+          <h3>GST & Indirect Taxation</h3>
+          <p>Guidance on GST compliance and resolution of issues related to indirect taxation for businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section-padding">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-container">
+        <blockquote>
+          "Rakesh Babu’s advice saved our company a significant amount in taxes. His professionalism and expertise are unparalleled."
+          <br>- Mr. Arvind Kapoor, CEO, XYZ Corp.
+        </blockquote>
+        <blockquote>
+          "I was confused about my tax filings, but Rakesh made everything clear and handled all the paperwork. Highly recommend his services."
+          <br>- Mrs. Suman Verma, Freelancer
+        </blockquote>
+        <blockquote>
+          "Rakesh helped us navigate a difficult tax dispute, securing a positive outcome. His deep knowledge of tax law is a great asset."
+          <br>- Mr. Rajeev Sharma, Director, ABC Ltd.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding bg-dark text-white">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>If you need expert legal advice or help with tax matters, we’re here to assist. Get in touch today!</p>
+      <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+        <input type="text" name="name" id="name" placeholder="Your Name" required>
+        <input type="email" name="email" id="email" placeholder="Your Email" required>
+        <textarea name="message" id="message" placeholder="Describe your tax-related issue or inquiry" required></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Email:</strong> rakeshbabu@taxlaw.com</p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Office Address:</strong> 123 Tax Avenue, New Delhi, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white">
+    <div class="container">
+      <p>&copy; 2025 Rakesh Babu - Income Tax Advocate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple form validation
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (name === "" || email === "" || message === "") {
+        alert("All fields are required.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
