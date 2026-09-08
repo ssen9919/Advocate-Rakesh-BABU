@@ -1,148 +1,822 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rakesh Babu - Income Tax Advocate</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    // JavaScript for smooth scroll functionality
-    function scrollToSection(sectionId) {
-      document.getElementById(sectionId).scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Rakesh Babu - Income Tax Advocate providing tax consultation, filing, planning, GST and legal advisory services.">
+
+    <title>Rakesh Babu | Income Tax Advocate</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0b1f3a;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        .navbar {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .navbar a {
+            display: block;
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #c99b3b;
+            color: #fff;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    rgba(5, 18, 35, 0.82),
+                    rgba(5, 18, 35, 0.82)
+                ),
+                linear-gradient(135deg, #17365d, #0b1f3a);
+
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 25px);
+            margin-bottom: 35px;
+            color: #e8e8e8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #c99b3b;
+            color: #fff;
+            padding: 15px 32px;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #a97e2c;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+        .section-padding {
+            padding: 85px 0;
+        }
+
+        .bg-light {
+            background: #f5f7fa;
+        }
+
+        .bg-dark {
+            background: #0b1f3a;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        section {
+            scroll-margin-top: 75px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 38px;
+            color: #0b1f3a;
+            margin-bottom: 35px;
+        }
+
+        .bg-dark h2 {
+            color: #fff;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+        #about .container {
+            max-width: 900px;
+        }
+
+        #about p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e1e5ea;
+            box-shadow: 0 7px 20px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+        }
+
+        .service-card h3 {
+            color: #0b1f3a;
+            font-size: 21px;
+            margin-bottom: 14px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* =========================
+           TESTIMONIALS
+        ========================== */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        blockquote {
+            background: #f5f7fa;
+            border-left: 5px solid #c99b3b;
+            padding: 25px;
+            border-radius: 8px;
+            color: #555;
+            font-size: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+        }
+
+        blockquote strong {
+            display: block;
+            margin-top: 15px;
+            color: #0b1f3a;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-intro {
+            font-size: 18px;
+            color: #d9e1ea;
+            margin-bottom: 25px;
+        }
+
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ccd3dc;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #c99b3b;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #c99b3b;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #a97e2c;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #e4e9ef;
+        }
+
+        .contact-info a {
+            color: #fff;
+        }
+
+        .contact-info a:hover {
+            color: #c99b3b;
+        }
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================== */
+        #successMessage {
+            display: none;
+            margin-top: 15px;
+            padding: 14px;
+            background: #e6f7ed;
+            color: #176b3a;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #d9e1ea;
+        }
+
+        /* =========================
+           BACK TO TOP
+        ========================== */
+        #topButton {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: #c99b3b;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+
+        #topButton:hover {
+            background: #a97e2c;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+        @media (max-width: 900px) {
+
+            .services-container,
+            .testimonials-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                min-height: auto;
+                padding: 10px 5px;
+            }
+
+            .navbar ul {
+                gap: 2px;
+            }
+
+            .navbar a {
+                padding: 9px 10px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .services-container,
+            .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+
+            #about p {
+                text-align: left;
+                font-size: 16px;
+            }
+
+            form {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Header with sticky navigation -->
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="javascript:void(0)" onclick="scrollToSection('home')">Home</a></li>
-        <li><a href="javascript:void(0)" onclick="scrollToSection('about')">About</a></li>
-        <li><a href="javascript:void(0)" onclick="scrollToSection('services')">Services</a></li>
-        <li><a href="javascript:void(0)" onclick="scrollToSection('testimonials')">Testimonials</a></li>
-        <li><a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section with Background Image -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Your Trusted Income Tax Advocate</h1>
-      <p>Expert Legal Services in Tax Filing, Planning & Advisory</p>
-      <a href="javascript:void(0)" onclick="scrollToSection('contact')" class="cta-button">Consult Now</a>
-    </div>
-  </section>
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- About Section -->
-  <section id="about" class="section-padding">
-    <div class="container">
-      <h2>About Rakesh Babu</h2>
-      <p>
-        With over 15 years of experience in the field, Rakesh Babu is a highly trusted Income Tax Advocate specializing in individual and corporate tax services. He has built a reputation for providing clear, strategic tax advice and legal support to help clients manage and reduce tax liabilities.
-      </p>
-      <p>
-        Whether you're seeking advice on tax planning, filing returns, or resolving disputes with tax authorities, Rakesh’s legal expertise and proactive approach ensure you receive the best possible solutions.
-      </p>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section id="services" class="section-padding bg-light">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="services-container">
-        <div class="service-card">
-          <h3>Income Tax Consultation</h3>
-          <p>Receive personalized consultations to optimize tax liabilities and ensure compliance with tax laws.</p>
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Your Trusted Income Tax Advocate</h1>
+
+            <p>
+                Expert Legal Services in Tax Filing, Planning & Advisory
+            </p>
+
+            <a href="#contact" class="cta-button">
+                Consult Now
+            </a>
+
         </div>
-        <div class="service-card">
-          <h3>Tax Filing & Return Services</h3>
-          <p>Ensure accurate and timely filing of your tax returns, avoiding penalties and complications.</p>
-        </div>
-        <div class="service-card">
-          <h3>Tax Planning & Advisory</h3>
-          <p>Strategic tax planning to minimize liabilities, utilizing exemptions, deductions, and credits.</p>
-        </div>
-        <div class="service-card">
-          <h3>Tax Representation & Dispute Resolution</h3>
-          <p>Representation during audits and resolving disputes with tax authorities to secure favorable outcomes.</p>
-        </div>
-        <div class="service-card">
-          <h3>Corporate Tax Services</h3>
-          <p>Expert advice on corporate taxation, mergers, acquisitions, and structuring businesses for tax efficiency.</p>
-        </div>
-        <div class="service-card">
-          <h3>GST & Indirect Taxation</h3>
-          <p>Guidance on GST compliance and resolution of issues related to indirect taxation for businesses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="section-padding">
-    <div class="container">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonials-container">
-        <blockquote>
-          "Rakesh Babu’s advice saved our company a significant amount in taxes. His professionalism and expertise are unparalleled."
-          <br>- Mr. Arvind Kapoor, CEO, XYZ Corp.
-        </blockquote>
-        <blockquote>
-          "I was confused about my tax filings, but Rakesh made everything clear and handled all the paperwork. Highly recommend his services."
-          <br>- Mrs. Suman Verma, Freelancer
-        </blockquote>
-        <blockquote>
-          "Rakesh helped us navigate a difficult tax dispute, securing a positive outcome. His deep knowledge of tax law is a great asset."
-          <br>- Mr. Rajeev Sharma, Director, ABC Ltd.
-        </blockquote>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section-padding bg-dark text-white">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>If you need expert legal advice or help with tax matters, we’re here to assist. Get in touch today!</p>
-      <form action="submit_form.php" method="post" onsubmit="return validateForm()">
-        <input type="text" name="name" id="name" placeholder="Your Name" required>
-        <input type="email" name="email" id="email" placeholder="Your Email" required>
-        <textarea name="message" id="message" placeholder="Describe your tax-related issue or inquiry" required></textarea>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-      <div class="contact-info">
-        <p><strong>Email:</strong> rakeshbabu@taxlaw.com</p>
-        <p><strong>Phone:</strong> +91 9876543210</p>
-        <p><strong>Office Address:</strong> 123 Tax Avenue, New Delhi, India</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white">
-    <div class="container">
-      <p>&copy; 2025 Rakesh Babu - Income Tax Advocate. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- =========================
+         ABOUT
+    ========================== -->
+    <section id="about" class="section-padding">
 
-  <script>
-    // Simple form validation
-    function validateForm() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
+        <div class="container">
 
-      if (name === "" || email === "" || message === "") {
-        alert("All fields are required.");
-        return false;
-      }
-      return true;
-    }
-  </script>
+            <h2>About Rakesh Babu</h2>
+
+            <p>
+                With over 15 years of experience in the field, Rakesh Babu
+                is a highly trusted Income Tax Advocate specializing in
+                individual and corporate tax services.
+            </p>
+
+            <p>
+                He provides clear, strategic tax advice and legal support
+                to help clients understand their tax responsibilities and
+                manage their tax matters effectively.
+            </p>
+
+            <p>
+                Whether you need assistance with tax planning, filing
+                returns, GST matters, or tax disputes, professional
+                guidance can help you make informed decisions and remain
+                compliant with applicable laws.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+    <section id="services" class="section-padding bg-light">
+
+        <div class="container">
+
+            <h2>Our Services</h2>
+
+            <div class="services-container">
+
+                <div class="service-card">
+                    <h3>Income Tax Consultation</h3>
+                    <p>
+                        Personalized guidance for individual and business
+                        income tax matters.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Tax Filing & Return Services</h3>
+                    <p>
+                        Assistance with accurate and timely income tax
+                        return preparation and filing.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Tax Planning & Advisory</h3>
+                    <p>
+                        Strategic guidance on applicable deductions,
+                        exemptions and tax planning opportunities.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Tax Representation</h3>
+                    <p>
+                        Professional assistance with notices, assessments
+                        and tax-related proceedings.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Corporate Tax Services</h3>
+                    <p>
+                        Tax support and advisory services for companies,
+                        firms and business owners.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>GST & Indirect Taxation</h3>
+                    <p>
+                        Guidance regarding GST compliance, returns and
+                        common indirect tax matters.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+    <section id="testimonials" class="section-padding">
+
+        <div class="container">
+
+            <h2>What Our Clients Say</h2>
+
+            <div class="testimonials-container">
+
+                <blockquote>
+                    “Rakesh Babu provided clear guidance and helped us
+                    understand our tax requirements.”
+                    <strong>— Mr. Arvind Kapoor</strong>
+                </blockquote>
+
+                <blockquote>
+                    “The tax filing process was explained clearly and
+                    handled professionally.”
+                    <strong>— Mrs. Suman Verma</strong>
+                </blockquote>
+
+                <blockquote>
+                    “We received useful guidance regarding our tax-related
+                    matter and documentation.”
+                    <strong>— Mr. Rajeev Sharma</strong>
+                </blockquote>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section id="contact" class="section-padding bg-dark text-white">
+
+        <div class="container">
+
+            <h2>Contact Us</h2>
+
+            <div class="contact-wrapper">
+
+                <!-- FORM -->
+                <div>
+
+                    <p class="contact-intro">
+                        If you need professional assistance with income tax,
+                        GST or related tax matters, get in touch with us.
+                    </p>
+
+                    <form id="contactForm">
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your Name"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your Email"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Describe your tax-related issue or inquiry"
+                            required
+                        ></textarea>
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            Submit Enquiry
+                        </button>
+
+                        <div id="successMessage">
+                            Your enquiry has been submitted successfully.
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info">
+
+                    <h3>Contact Information</h3>
+
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:rakeshbabu@taxlaw.com">
+                            rakeshbabu@taxlaw.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+919876543210">
+                            +91 9876543210
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Office Address:</strong><br>
+                        123 Tax Avenue,<br>
+                        New Delhi, India
+                    </p>
+
+                    <p>
+                        <strong>Office Hours:</strong><br>
+                        Monday – Saturday<br>
+                        10:00 AM – 6:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="bg-dark text-white">
+
+        <div class="container">
+
+            <p>
+                &copy; <span id="year"></span>
+                Rakesh Babu - Income Tax Advocate.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+    <button id="topButton" title="Back to top">
+        ↑
+    </button>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script>
+
+        const contactForm = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
+        const topButton = document.getElementById("topButton");
+
+
+        /* FORM VALIDATION */
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return;
+            }
+
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            if (message === "") {
+                alert("Please describe your tax-related issue.");
+                return;
+            }
+
+            successMessage.style.display = "block";
+
+            contactForm.reset();
+
+            setTimeout(function() {
+                successMessage.style.display = "none";
+            }, 5000);
+
+        });
+
+
+        /* BACK TO TOP */
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY > 400) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+
+        });
+
+
+        topButton.addEventListener("click", function() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* CURRENT YEAR */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
 </body>
 </html>
+```
